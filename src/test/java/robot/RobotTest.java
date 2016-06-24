@@ -1,3 +1,4 @@
+package robot;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
