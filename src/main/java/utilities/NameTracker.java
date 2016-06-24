@@ -1,5 +1,7 @@
 package utilities;
 
+import java.security.InvalidParameterException;
+import java.util.HashMap;
 import java.util.Map;
 
 import exceptions.NotImplementedException;
@@ -13,7 +15,7 @@ public class NameTracker
 	 * Initialize the name map.
 	 */
 	public NameTracker() {
-		throw new NotImplementedException();
+		this.nameMap = new HashMap<String, Boolean>();
 	}
 	
 	/**
@@ -24,6 +26,19 @@ public class NameTracker
 	 * @return
 	 */
 	public boolean isNameUsed(String name) {
-		throw new NotImplementedException();
+		if ( name == null ) {
+			throw new NullPointerException();
+		} else if ( name.isEmpty( ) ) {
+			throw new InvalidParameterException();
+		}
+		
+		Boolean value = this.nameMap.get( name );
+		
+		if ( value == null ) {
+			this.nameMap.put( name, true );
+			return false;
+		}
+		
+		return true;
 	}
 }
