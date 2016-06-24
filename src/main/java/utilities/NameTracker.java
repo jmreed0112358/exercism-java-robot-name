@@ -4,16 +4,10 @@ import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
 
-import exceptions.NotImplementedException;
-
 public class NameTracker
 {
-
-	private static Map<String, Boolean> nameMap;
+	private Map<String, Boolean> nameMap;
 	
-	/**
-	 * Initialize the name map.
-	 */
 	public NameTracker() {
 		this.nameMap = new HashMap<String, Boolean>();
 	}
